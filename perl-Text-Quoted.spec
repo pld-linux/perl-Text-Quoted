@@ -1,23 +1,22 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
-#
+%bcond_without	tests	# do not perform "make test"
+
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Text
 %define	pnam	Quoted
 Summary:	Text::Quoted - extract the structure of a quoted mail message
 Summary(pl):	Text::Quoted - wydzielenie struktury cytowanej wiadomo¶ci pocztowej
 Name:		perl-Text-Quoted
-Version:	1.2
+Version:	1.3
 Release:	1
-# same as perl
-License:	GPL v1+ or Artistic
+License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	cec22ff657590d1e3dbf89ad17f3f94a
+# Source0-md5:	00860205de13d5802e8402b385426abe
 BuildRequires:	perl-devel >= 5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-%if %{!?_without_tests:1}0
+%if %{with tests}
 BuildRequires:	perl-Text-Autoformat
 %endif
 BuildArch:	noarch
@@ -42,12 +41,13 @@ find -type f | xargs %{__perl} -pi -e 's,/usr/local,/usr,g'
 	INSTALLDIRS=vendor
 %{__make}
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install\
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
