@@ -17,6 +17,9 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version
 # Source0-md5:	cec22ff657590d1e3dbf89ad17f3f94a
 BuildRequires:	perl-devel >= 5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+%if %{!?_without_tests:1}0
+BuildRequires:	perl-Text-Autoformat
+%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,7 +37,7 @@ zagnie¿d¿on± strukturê danych.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-find -type f | xargs perl -pi -e 's,/usr/local,/usr,g'
+find -type f | xargs %{__perl} -pi -e 's,/usr/local,/usr,g'
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make}
