@@ -5,11 +5,13 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Text
 %define	pnam	Quoted
-Summary:	Text::Quoted - Extract the structure of a quoted mail message
+Summary:	Text::Quoted - extract the structure of a quoted mail message
+Summary(pl):	Text::Quoted - wydzielenie struktury cytowanej wiadomo¶ci pocztowej
 Name:		perl-Text-Quoted
 Version:	1.2
 Release:	1
-License:	Artistic
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	cec22ff657590d1e3dbf89ad17f3f94a
@@ -19,7 +21,14 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Examines the structure of some text which may contain multiple different levels of quoting, and turns the text into a nested data structure.
+Text::Quoted Perl module examines the structure of some text which may
+contain multiple different levels of quoting, and turns the text into
+a nested data structure.
+
+%description -l pl
+Modu³ Perla Text::Quoted analizuje strukturê pewnego tekstu, który
+mo¿e zawieraæ wiele ró¿nych poziomów cytowania i przekszta³ca tekst w
+zagnie¿d¿on± strukturê danych.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
