@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Text
 %define	pnam	Quoted
@@ -10,6 +10,7 @@ Summary(pl):	Text::Quoted - wydzielenie struktury cytowanej wiadomo¶ci pocztowej
 Name:		perl-Text-Quoted
 Version:	1.5
 Release:	1
+# Artistic (README says: same as perl)
 License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
