@@ -8,13 +8,13 @@
 Summary:	Text::Quoted - extract the structure of a quoted mail message
 Summary(pl):	Text::Quoted - wydzielenie struktury cytowanej wiadomo¶ci pocztowej
 Name:		perl-Text-Quoted
-Version:	1.5
+Version:	1.8
 Release:	1
 # Artistic (README says: same as perl)
 License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	24f2eda17ae8f39084005051f0c2545a
+# Source0-md5:	cab9d462b480437bab72b6044ac6c788
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
