@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Text
-%define	pnam	Quoted
+%define		pdir	Text
+%define		pnam	Quoted
 Summary:	Text::Quoted - extract the structure of a quoted mail message
 Summary(pl):	Text::Quoted - wydzielenie struktury cytowanej wiadomo¶ci pocztowej
 Name:		perl-Text-Quoted
