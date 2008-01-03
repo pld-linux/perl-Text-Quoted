@@ -13,8 +13,9 @@ Release:	1
 # Artistic (README says: same as perl)
 License:	Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Text/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	acb936de289e7f8e16a95345503d1640
+URL:		http://search.cpan.org/dist/Text-Quoted/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -55,5 +56,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes
-%{perl_vendorlib}/%{pdir}/%{pnam}.pm
+%{perl_vendorlib}/Text/Quoted.pm
 %{_mandir}/man3/*
